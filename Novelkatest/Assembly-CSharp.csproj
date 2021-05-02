@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scenes\ReColorImage.cs" />
     <Compile Include="Assets\Scenes\SayPanelScripts.cs" />
     <Compile Include="Assets\Scenes\Soldier.cs" />
+    <Compile Include="Assets\Scenes\TestJopa.cs" />
     <Compile Include="Assets\Scenes\[Scripts]\mapper.cs" />
     <Reference Include="UnityEngine">
       <HintPath>D:/[Unity]/[BasicLocation]/2019.4.17f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
