@@ -6,7 +6,7 @@ public class mapper : MonoBehaviour
 {
     public Material ErrorMaterial;
     public Material GoodMaterial;
-    public Material AlertMaterial;
+    //public Material AlertMaterial;
     public int waitSeconds = 0;
     public int howLong = 0;
     public bool iCanGo = true;
