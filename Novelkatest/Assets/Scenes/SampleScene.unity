@@ -1183,7 +1183,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 966528258}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 52593c98817e3004099dfe19f3e1392e, type: 3}
   m_Name: 
@@ -1220,14 +1220,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   counter: 3
+  num: 0
   posBool: 1
   go: 0
-  pos: 
+  pos: 080000000800000008000000080000000000000000000000000000000000000000000000000000000000000000000000
   posled: 
   ErrorMaterial: {fileID: 2100000, guid: c2b91590cd0be034884920c260676237, type: 2}
   GoogMaterial: {fileID: 2100000, guid: c6208b15f8329e54c94af47612600173, type: 2}
   BaseMaterial: {fileID: 2100000, guid: 238cd77b91a48e149b3f028e5c9b8fbd, type: 2}
-  AllCube: []
+  AllCube:
+  - {fileID: 616804597}
+  - {fileID: 624375782}
+  - {fileID: 2011636840}
+  - {fileID: 1285311483}
+  - {fileID: 1231363147}
+  - {fileID: 1077966388}
+  - {fileID: 1523524093}
+  - {fileID: 2071573795}
+  - {fileID: 1574828816}
+  - {fileID: 1998612278}
+  - {fileID: 1072540715}
+  - {fileID: 894820153}
+  - {fileID: 639758106}
+  - {fileID: 1180055502}
+  - {fileID: 1705918291}
+  - {fileID: 743203964}
+  Kohn: {fileID: 0}
   anim: {fileID: 9100000, guid: 633435325648d614087a63af1f221bd8, type: 2}
   goodanim: {fileID: 9100000, guid: 51de23cdce935cb4fb2a1045cdd257f4, type: 2}
   badanim: {fileID: 9100000, guid: 024311f0111dfb04799942f1df7ffa63, type: 2}

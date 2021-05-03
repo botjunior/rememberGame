@@ -14,6 +14,18 @@ public class Soldier : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        boss.GetComponent<Boss>().addclickobject(this.gameObject);
+    }
+    void Start()
+    {
+        id += 1;
+        thId = id;
+    }
+
+
+
+    /*public void OnPointerClick(PointerEventData eventData)
+    {
         boss.GetComponent<Boss>().reset();
         boss.GetComponent<Boss>().counter += 1;
         boss.GetComponent<Boss>().addinlist(thId);
@@ -21,6 +33,13 @@ public class Soldier : MonoBehaviour, IPointerClickHandler
         Debug.Log(boss.GetComponent<Boss>().counter + " "+boss.GetComponent<Boss>().checkvalue());
         switchcolor();
         
+    }
+
+    public void sendDataController()
+    {
+        boss.GetComponent<Boss>().addclickid(thId);
+        boss.GetComponent<Boss>().addclickobject(gameObject);
+
     }
 
     void switchcolor()
@@ -49,6 +68,6 @@ public class Soldier : MonoBehaviour, IPointerClickHandler
     void Update()
     {
         
-    }
-    
+    }*/
+
 }
