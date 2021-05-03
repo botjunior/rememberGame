@@ -14,7 +14,11 @@ public class Soldier : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        boss.GetComponent<Boss>().addclickobject(this.gameObject);
+        if (boss.GetComponent<Boss>().clicable)
+        {
+            boss.GetComponent<Boss>().addclickobject(this.gameObject);
+        }
+        
     }
     void Start()
     {

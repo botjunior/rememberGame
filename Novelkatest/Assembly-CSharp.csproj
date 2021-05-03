@@ -68,13 +68,15 @@
     <Compile Include="Assets\Scenes\Boss.cs" />
     <Compile Include="Assets\Scenes\CanvasDialogeScript.cs" />
     <Compile Include="Assets\Scenes\CharterScript.cs" />
+    <Compile Include="Assets\Scenes\EndSceneManager.cs" />
+    <Compile Include="Assets\Scenes\EndScore.cs" />
+    <Compile Include="Assets\Scenes\GoSceneWithId.cs" />
     <Compile Include="Assets\Scenes\IPointClickHandler.cs" />
     <Compile Include="Assets\Scenes\Movecharter.cs" />
     <Compile Include="Assets\Scenes\NewBehaviourScript.cs" />
     <Compile Include="Assets\Scenes\ReColorImage.cs" />
     <Compile Include="Assets\Scenes\SayPanelScripts.cs" />
     <Compile Include="Assets\Scenes\Soldier.cs" />
-    <Compile Include="Assets\Scenes\TestJopa.cs" />
     <Compile Include="Assets\Scenes\[Scripts]\mapper.cs" />
     <Reference Include="UnityEngine">
       <HintPath>D:/[Unity]/[BasicLocation]/2019.4.17f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

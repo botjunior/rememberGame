@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Boss : MonoBehaviour
 {
     public int counter;
     public int num;
+    public float seconds = 0;
 
+    public Text scroeText;
 
-    public bool posBool = true;
-    public bool go = false;
+    public bool clicable = false;
 
     public List<int> pos = new List<int>();
     public List<int> posled = new List<int>();
@@ -20,7 +22,7 @@ public class Boss : MonoBehaviour
     public Material BaseMaterial;
 
     public GameObject[] AllCube;
-    public GameObject Kohn;
+    
 
     public RuntimeAnimatorController anim;
     public RuntimeAnimatorController goodanim;
@@ -32,14 +34,29 @@ public class Boss : MonoBehaviour
        // AllCube = GameObject.FindGameObjectsWithTag("Cube");
         gamelogic();
         showpos();
+        scroeText.text = "Score: " + 0;
+        Application.targetFrameRate = 60;
     }
 
     public void addclickobject(GameObject tmp)
     {
         posled.Add(tmp.GetComponent<Soldier>().thId);
         animatedobject(tmp);
-    }
+        newround();
 
+    }
+    void newround()
+    {
+        if (counter == posled.Count) {
+            scroeText.text = "Score: " + counter;
+            counter++;
+            gamelogic();
+            posled.Clear();
+            showpos();
+            clicable = false;
+        }
+        Debug.Log("Check");
+    }
     public void animatedobject(GameObject tmp)
     {
         if (answer())
@@ -51,6 +68,7 @@ public class Boss : MonoBehaviour
         {
             tmp.GetComponent<Animator>().runtimeAnimatorController = null;
             tmp.GetComponent<Animator>().runtimeAnimatorController = badanim;
+            nextScene();
         }
     }
 
@@ -65,11 +83,9 @@ public class Boss : MonoBehaviour
     }
     public void showpos()
     {
-        for (int i = 0; i < pos.Count;i++)
-        {
-            StartCoroutine(TouchTimer(pos[i], 3, i));
-            Debug.Log(i);
-        }
+
+            StartCoroutine(TouchTimer());
+
     }
     public GameObject findobjectwithid(int tmpid)
     { 
@@ -83,13 +99,35 @@ public class Boss : MonoBehaviour
         }
         return null;
     }
-    public IEnumerator TouchTimer(int tmpid,int seconds, int i){
-        yield return new WaitForSeconds(seconds + i);
-        GameObject gtmp = findobjectwithid(tmpid);
-        gtmp.GetComponent<Animator>().runtimeAnimatorController = null;
-        gtmp.GetComponent<Animator>().runtimeAnimatorController = goodanim;
-        yield return new WaitForSeconds( 2 * seconds + i);
+    public IEnumerator TouchTimer(){
+        for (int i = 0; i < pos.Count; i++)
+        {
+            yield return new WaitForSeconds(2);
+            GameObject gtmp = findobjectwithid(pos[i]);
+            gtmp.GetComponent<Animator>().runtimeAnimatorController = null;
+            gtmp.GetComponent<Animator>().runtimeAnimatorController = goodanim;
+        }
+        clicable = true;
     }
+    public IEnumerator enable()
+    {
+        yield return new WaitForSeconds(1);
+        clicable = true;
+        
+    }
+    void enableobj()
+    {
+        for (int i = 0; i < AllCube.Length; i++)
+        {
+            AllCube[i].GetComponent<Soldier>().enabled = !AllCube[i].GetComponent<Soldier>().enabled;
+        }
+    }
+    void nextScene()
+    {
+        SceneManager.LoadScene(1);
+        PlayerPrefs.SetInt("round", counter-1);
+    }
+    
     /*private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
