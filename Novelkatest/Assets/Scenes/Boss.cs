@@ -35,7 +35,6 @@ public class Boss : MonoBehaviour
         gamelogic();
         showpos();
         scroeText.text = "Score: " + 0;
-        Application.targetFrameRate = 60;
     }
 
     public void addclickobject(GameObject tmp)

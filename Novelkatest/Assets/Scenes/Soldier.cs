@@ -5,7 +5,6 @@ using UnityEngine.EventSystems;
 
 public class Soldier : MonoBehaviour, IPointerClickHandler
 {
-    public static int id = 0;
     public GameObject boss;
     public int thId;
     public Material c1;
@@ -20,11 +19,7 @@ public class Soldier : MonoBehaviour, IPointerClickHandler
         }
         
     }
-    void Start()
-    {
-        id += 1;
-        thId = id;
-    }
+    
 
 
 
